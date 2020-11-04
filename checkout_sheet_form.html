@@ -14,16 +14,34 @@
 
 <body>
     <div>
-        <h1 id="heading">Feuille de Caisse PKO</h1>
+        <h1 id="heading">Feuille de Caisse</h1>
         <form action="/action_page.php">
-            <label for="start">Date*:</label><input type="date" id="dateDuJour" name="dateDuJour" value="2020-07-22"
-                min="2020-01-01"><br>
-            <p>Ouverture:</p>
+            <label for="dateDuJour">Date*:</label><input type="date" id="dateDuJour" name="dateDuJour"
+                value="2020-07-22" min="2020-01-01"><br>
+            <h3>Ouverture:</h3>
             <label for="ouverturePrenom">Prénom*:</label><input type="text" id="ouverturePrenom" name="ouverturePrenom"
                 value="Jeanne-Marie"><br>
             <label for="ouvertureNom">Nom*:</label><input type="text" id="ouvertureNom" name="ouvertureNom"
                 value="Nom de Famille"><br><br>
-            <p>Fermeture:</p>
+            <h4>Billets:</h4>
+            <label for=50>Nombre de Billets de 50€:</label><input type="number" id="billetsCinquanteOuverture"
+                name="billetsCinquanteOuverture" value=0>
+            <a id="50xquantite"></a>
+            <br>
+            <label for=20>Nombre de Billets de 20€:</label><input type="number"
+                id="billetsVingtOuverture" name="billetsVingtOuverture" value="0">
+                <a id="50xquantite"></a>
+                <br>
+            <label for=10>Nombre de Billets de 10€:</label><input type="number"
+                id="billetsDixOuverture" name="billetsDixOuverture" value="0">
+                <a id="50xquantite"></a>
+                <br>
+            <label for=5>Nombre de Billets de 5€:</label><input type="number"
+                id="billetsCinqOuverture" name="billetsCinqOuverture" value="0">
+                <a id="50xquantite"></a>
+                <br>
+
+            <h3>Fermeture:</h3>
             <label for="fermeturePrenom">Prénom*:</label><input type="text" id="fermeturePrenom" name="fermeturePrenom"
                 value="Jeanne-Marie"><br>
             <label for="fermetureNom">Nom*:</label><input type="text" id="fermetureNom" name="fermetureNom"
@@ -32,7 +50,19 @@
     </div>
 
     <button onclick="javascript:convertToPDF()">Générer un PDF</button>
-
+    <script>
+        function defineMultiplier() {
+            if ((document.getElementById("billetsCinquanteOuverture").for) == 50) {
+                return multiplier = 50;
+            } else {
+                return multiplier = 1;
+            }
+        }
+        var multiplier = defineMultiplier();
+        var y = document.getElementById("billetsCinquanteOuverture").value;
+        var z = (+50 * +y).toString();
+        document.getElementById("50xquantite").innerHTML = z;
+    </script>
 </body>
 
 </html>
