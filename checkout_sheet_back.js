@@ -6,8 +6,12 @@ function date_yyyy_mm_dd(){
 function convertToPDF() {
     var date = date_yyyy_mm_dd();
     var doc = new jsPDF('landscape');
-    doc.text(5, 10, "ouverture :");
-    doc.text(35, 10, document.getElementById("prenom").value);
-    doc.text(70, 10, document.getElementById("nom").value);
+    doc.text(2, 10, document.getElementById("dateDuJour").value);
+    doc.text(35, 10, "Ouverture :");
+    doc.text(70, 10, document.getElementById("ouverturePrenom").value);
+    doc.text(115, 10, document.getElementById("ouvertureNom").value);
+    doc.text(160, 10, "Fermeture :");
+    doc.text(195, 10, document.getElementById("fermeturePrenom").value);
+    doc.text(235, 10, document.getElementById("fermetureNom").value);
     doc.save('feuille_de_caisse_'+ date + '.pdf');
 }
