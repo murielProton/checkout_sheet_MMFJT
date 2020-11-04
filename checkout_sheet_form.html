@@ -24,21 +24,21 @@
             <label for="ouvertureNom">Nom*:</label><input type="text" id="ouvertureNom" name="ouvertureNom"
                 value="Nom de Famille"><br><br>
             <h4>Billets:</h4>
-            <label for=50>Nombre de Billets de 50€:</label><input type="number" id="billetsCinquanteOuverture"
-                name="billetsCinquanteOuverture" value=0>
+            <label for="billetsCinquanteOuverture">Nombre de Billets de 50€:</label><input type="number" id="billetsCinquanteOuverture"
+                name="billetsCinquanteOuverture" onchange="defineMultiplier(this)" min="0" value="0" targetDisplay="50xquantite" multiplier="50" >
             <a id="50xquantite"></a>
             <br>
-            <label for=20>Nombre de Billets de 20€:</label><input type="number"
-                id="billetsVingtOuverture" name="billetsVingtOuverture" value="0">
-                <a id="50xquantite"></a>
+            <label for="billetsVingtOuverture">Nombre de Billets de 20€:</label><input type="number"
+                id="billetsVingtOuverture" name="billetsVingtOuverture" onchange="defineMultiplier(this)" min="0" value="0" targetDisplay="20xquantite" multiplier="20"  >
+               <a id="20xquantite"></a>
                 <br>
-            <label for=10>Nombre de Billets de 10€:</label><input type="number"
-                id="billetsDixOuverture" name="billetsDixOuverture" value="0">
-                <a id="50xquantite"></a>
+            <label for="billetsDixOuverture">Nombre de Billets de 10€:</label><input type="number"
+                id="billetsDixOuverture" name="billetsDixOuverture" onchange="defineMultiplier(this)" min="0" value="0" targetDisplay="10xquantite" multiplier="10" >
+                <a id="10xquantite"></a>
                 <br>
-            <label for=5>Nombre de Billets de 5€:</label><input type="number"
-                id="billetsCinqOuverture" name="billetsCinqOuverture" value="0">
-                <a id="50xquantite"></a>
+            <label for="billetsCinqOuverture">Nombre de Billets de 5€:</label><input type="number"
+                id="billetsCinqOuverture" name="billetsCinqOuverture" onchange="defineMultiplier(this)" min="0" value="0" targetDisplay="5xquantite" multiplier="5" >
+                <a id="5xquantite"></a>
                 <br>
 
             <h3>Fermeture:</h3>
@@ -51,17 +51,13 @@
 
     <button onclick="javascript:convertToPDF()">Générer un PDF</button>
     <script>
-        function defineMultiplier() {
-            if ((document.getElementById("billetsCinquanteOuverture").for) == 50) {
-                return multiplier = 50;
-            } else {
-                return multiplier = 1;
-            }
+        function defineMultiplier(input) {
+            console.log(input.getAttribute("targetDisplay"))
+            console.log(input.getAttribute("multiplier"))
+            var multiplier = input.getAttribute("multiplier");
+            var displayId = input.getAttribute("targetDisplay");
+            document.getElementById(displayId).innerHTML = (multiplier *input.value);
         }
-        var multiplier = defineMultiplier();
-        var y = document.getElementById("billetsCinquanteOuverture").value;
-        var z = (+50 * +y).toString();
-        document.getElementById("50xquantite").innerHTML = z;
     </script>
 </body>
 
