@@ -15,3 +15,10 @@ function convertToPDF() {
     doc.text(235, 10, document.getElementById("fermetureNom").value);
     doc.save('feuille_de_caisse_'+ date + '.pdf');
 }
+function euroBillTimesQuantity(input) {
+    console.log(input.getAttribute("targetDisplay"))
+    console.log(input.getAttribute("euroBill"))
+    var euroBill = input.getAttribute("euroBill");
+    var displayId = input.getAttribute("targetDisplay");
+    document.getElementById(displayId).innerHTML = (euroBill *input.value).toFixed(2);
+}

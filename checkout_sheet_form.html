@@ -18,30 +18,62 @@
         <form action="/action_page.php">
             <label for="dateDuJour">Date*:</label><input type="date" id="dateDuJour" name="dateDuJour"
                 value="2020-07-22" min="2020-01-01"><br>
-            <h3>Ouverture:</h3>
+            <h2>Ouverture:</h2>
             <label for="ouverturePrenom">Prénom*:</label><input type="text" id="ouverturePrenom" name="ouverturePrenom"
                 value="Jeanne-Marie"><br>
             <label for="ouvertureNom">Nom*:</label><input type="text" id="ouvertureNom" name="ouvertureNom"
                 value="Nom de Famille"><br><br>
-            <h4>Billets:</h4>
-            <label for="billetsCinquanteOuverture">Nombre de Billets de 50€:</label><input type="number" id="billetsCinquanteOuverture"
-                name="billetsCinquanteOuverture" onchange="defineMultiplier(this)" min="0" value="0" targetDisplay="50xquantite" multiplier="50" >
-            <a id="50xquantite"></a>
+            <h4>Liquidité à l'Ouverture:</h4>
+            <label for="billetsCinquanteOuverture">Nombre de Billets de 50€:</label>
+            <input type="number"
+                id="billetsCinquanteOuverture" name="billetsCinquanteOuverture" onchange="euroBillTimesQuantity(this)"
+                min="0" value="0" targetDisplay="Opening50xquantite" euroBill="50">
+            <a id="Opening50xquantite"></a>
             <br>
             <label for="billetsVingtOuverture">Nombre de Billets de 20€:</label><input type="number"
-                id="billetsVingtOuverture" name="billetsVingtOuverture" onchange="defineMultiplier(this)" min="0" value="0" targetDisplay="20xquantite" multiplier="20"  >
-               <a id="20xquantite"></a>
-                <br>
+                id="billetsVingtOuverture" name="billetsVingtOuverture" onchange="euroBillTimesQuantity(this)" min="0"
+                value="0" targetDisplay="Opening20xquantite" euroBill="20">
+            <a id="Opening20xquantite"></a>
+            <br>
             <label for="billetsDixOuverture">Nombre de Billets de 10€:</label><input type="number"
-                id="billetsDixOuverture" name="billetsDixOuverture" onchange="defineMultiplier(this)" min="0" value="0" targetDisplay="10xquantite" multiplier="10" >
-                <a id="10xquantite"></a>
-                <br>
+                id="billetsDixOuverture" name="billetsDixOuverture" onchange="euroBillTimesQuantity(this)" min="0"
+                value="0" targetDisplay="Opening10xquantite" euroBill="10">
+            <a id="Opening10xquantite"></a>
+            <br>
             <label for="billetsCinqOuverture">Nombre de Billets de 5€:</label><input type="number"
-                id="billetsCinqOuverture" name="billetsCinqOuverture" onchange="defineMultiplier(this)" min="0" value="0" targetDisplay="5xquantite" multiplier="5" >
-                <a id="5xquantite"></a>
-                <br>
+                id="billetsCinqOuverture" name="billetsCinqOuverture" onchange="euroBillTimesQuantity(this)" min="0"
+                value="0" targetDisplay="Opening5xquantite" euroBill="5">
+            <a id="Opening5xquantite"></a>
+            <br>
+            <label for="piecesDeuxOuverture">Nombre de Pièces de 2€:</label><input type="number"
+                id="piecesDeuxOuverture" name="piecesDeuxOuverture" onchange="euroBillTimesQuantity(this)" min="0"
+                value="0" targetDisplay="Opening2xquantite" euroBill="2">
+            <a id="Opening2xquantite"></a>
+            <br>
+            <label for="piecesUnOuverture">Nombre de Pièces de 1€:</label><input type="number" id="piecesUnOuverture"
+                name="piecesUnOuverture" onchange="euroBillTimesQuantity(this)" min="0" value="0"
+                targetDisplay="Opening1xquantite" euroBill="1">
+            <a id="Opening1xquantite"></a>
+            <br>
+            <label for="pieceCinquanteCentimesOuverture">Nombre de Pièces de 0.50€:</label><input type="number"
+                id="pieceCinquanteCentimesOuverture" name="pieceCinquanteCentimesOuverture"
+                onchange="euroBillTimesQuantity(this)" min="0" value="0" targetDisplay="Opening0dote50xquantite"
+                euroBill="0.50">
+            <a id="Opening0dote50xquantite"></a>
+            <br>
+            <label for="pieceVingtCentimesOuverture">Nombre de Pièces de 0.20€:</label><input type="number"
+                id="pieceVingtCentimesOuverture" name="pieceVingtCentimesOuverture"
+                onchange="euroBillTimesQuantity(this)" min="0" value="0" targetDisplay="Opening0dote20xquantite"
+                euroBill="0.20">
+            <a id="Opening0dote20xquantite"></a>
+            <br>
+            <label for="pieceDixCentimesOuverture">Nombre de Pièces de 0.10€:</label><input type="number"
+                id="pieceDixCentimesOuverture" name="pieceDixCentimesOuverture" onchange="euroBillTimesQuantity(this)"
+                min="0" value="0" targetDisplay="Opening0dote10xquantite" euroBill="0.10">
+            <a id="Opening0dote10xquantite"></a>
+            <br>
 
-            <h3>Fermeture:</h3>
+            <h2>Fermeture:</h2>
             <label for="fermeturePrenom">Prénom*:</label><input type="text" id="fermeturePrenom" name="fermeturePrenom"
                 value="Jeanne-Marie"><br>
             <label for="fermetureNom">Nom*:</label><input type="text" id="fermetureNom" name="fermetureNom"
@@ -50,15 +82,7 @@
     </div>
 
     <button onclick="javascript:convertToPDF()">Générer un PDF</button>
-    <script>
-        function defineMultiplier(input) {
-            console.log(input.getAttribute("targetDisplay"))
-            console.log(input.getAttribute("multiplier"))
-            var multiplier = input.getAttribute("multiplier");
-            var displayId = input.getAttribute("targetDisplay");
-            document.getElementById(displayId).innerHTML = (multiplier *input.value);
-        }
-    </script>
+
 </body>
 
 </html>
