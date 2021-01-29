@@ -21,13 +21,7 @@ function euroBillTimesQuantity(input) {
     document.getElementById(displayId).innerHTML = (euroBill * input.value).toFixed(2);
     openingSumm();
     closureSumm();
-}
-
-function openingSumm () {
-    summOnSection("montantOuverture", "openingSumm");
-}
-function closureSumm() {
-    summOnSection("montantFermeture", "closureSumm");
+    afterDepositSumm();
 }
 function summOnSection(classNameMontant, idSommeMontant) {
     var listMontant = document.getElementsByClassName(classNameMontant);
@@ -42,6 +36,15 @@ function summOnSection(classNameMontant, idSommeMontant) {
         }
     }
     var celuleSomme = document.getElementById(idSommeMontant);
-    
+
     celuleSomme.innerHTML = (sumAsFloat).toFixed(2);
+}
+function openingSumm () {
+    summOnSection("montantOuverture", "openingSumm");
+}
+function closureSumm() {
+    summOnSection("montantFermeture", "closureSumm");
+}
+function afterDepositSumm() {
+    summOnSection("montantApresDepot", "afterDepositSumm");
 }

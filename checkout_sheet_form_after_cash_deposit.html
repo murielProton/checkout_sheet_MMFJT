@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+</head>
+<div for="fermetureAfterDeposit" id="fermetureAfterDeposit" name="fermetureAfterDeposit">
+    <h2>La caisse après le dépôt:</h2>
+
+    <h4></h4>
+    <table style="width:100%">
+        <tr>
+            <th></th>
+            <th>Quantité</th>
+            <th>montant</th>
+        </tr>
+        <tr>
+            <td><label for="billetsDixApresDepot">Nombre de Billets de 10€:</label></td>
+            <td>
+                <input type="number" id="billetsDixApresDepot" name="billetsDixApresDepot" class="inputAfterDeposit"
+                       onchange="euroBillTimesQuantity(this)" min="0" value="0" targetDisplay="afterDeposit10xquantite"
+                       euroBill="10">
+            </td>
+            <td><a id="afterDeposit10xquantite" class="montantApresDepot"></a></td>
+        </tr>
+        <tr>
+            <td><label for="billetsCinqApresDepot">Nombre de Billets de 5€:</label></td>
+            <td>
+                <input type="number" id="billetsCinqApresDepot" name="billetsCinqApresDepot" class="inputAfterDeposit"
+                       onchange="euroBillTimesQuantity(this)" min="0" value="0" targetDisplay="afterDeposit5xquantite"
+                       euroBill="5">
+            </td>
+            <td><a id="afterDeposit5xquantite" class="montantApresDepot"></a></td>
+        </tr>
+        <tr>
+            <td><label for="piecesDeuxApresDepot">Nombre de Pièces de 2€:</label></td>
+            <td>
+                <input type="number" id="piecesDeuxApresDepot" name="piecesDeuxApresDepot" class="inputAfterDeposit"
+                       onchange="euroBillTimesQuantity(this)" min="0" value="0" targetDisplay="afterDeposit2xquantite"
+                       euroBill="2">
+            </td>
+            <td><a id="afterDeposit2xquantite" class="montantApresDepot"></a></td>
+        </tr>
+        <tr>
+            <td><label for="piecesUnApresDepot">Nombre de Pièces de 1€:</label></td>
+            <td>
+                <input type="number" id="piecesUnApresDepot" name="piecesUnApresDepot" class="inputAfterDeposit"
+                       onchange="euroBillTimesQuantity(this)" min="0" value="0" targetDisplay="afterDeposit1xquantite"
+                       euroBill="1">
+            </td>
+            <td><a id="afterDeposit1xquantite" class="montantApresDepot"></a></td>
+        </tr>
+        <tr>
+            <td><label for="pieceCinquanteCentimesApresDepot">Nombre de Pièces de 0.50€:</label></td>
+            <td>
+                <input type="number" id="pieceCinquanteCentimesApresDepot" name="pieceCinquanteCentimesApresDepot"
+                       onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputAfterDeposit"
+                       targetDisplay="afterDeposit0dote50xquantite" euroBill="0.50">
+            </td>
+            <td><a id="afterDeposit0dote50xquantite" class="montantApresDepot"></a></td>
+        </tr>
+        <tr>
+            <td><label for="pieceVingtCentimesApresDepot">Nombre de Pièces de 0.20€:</label></td>
+            <td>
+                <input type="number" id="pieceVingtCentimesApresDepot" name="pieceVingtCentimesApresDepot"
+                       onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputAfterDeposit"
+                       targetDisplay="afterDeposit0dote20xquantite" euroBill="0.20">
+            </td>
+            <td><a id="afterDeposit0dote20xquantite" class="montantApresDepot"></a></td>
+        </tr>
+        <tr>
+            <td><label for="pieceDixCentimesApresDepot">Nombre de Pièces de 0.10€:</label></td>
+            <td>
+                <input type="number" id="pieceDixCentimesApresDepot" name="pieceDixCentimesApresDepot"
+                       onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputAfterDeposit"
+                       targetDisplay="afterDeposit0dote10xquantite" euroBill="0.10">
+            </td>
+            <td><a id="afterDeposit0dote10xquantite" class="montantApresDepot"></a></td>
+        </tr>
+        <tr>
+            <td><h4>TOTAL C Après DEPOT (TOT C)</h4></td>
+            <td></td>
+            <td>
+                <h4 type="number" id="afterDepositSumm" name="afterDepositSumm" targetDisplay="afterDepositSumm"
+                    onload="afterDepositSumm(this)" min="0" value="TOTAL C"
+                    targetDisplay="afterDepositSumm"></h4>
+                </h4>
+            </td>
+        </tr>
+    </table>
+</div>
+</div>
+
+
+
+</html>

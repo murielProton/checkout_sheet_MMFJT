@@ -1,8 +1,8 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-32">
     <meta name="viewport" content="width=device-width, ini">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>html to PDF with CSS using jspdf</title>
@@ -16,6 +16,9 @@
         $(function include() {
             $("#opening").load("checkout_sheet_form_opening.html");
             $("#closing").load("checkout_sheet_form_closing.html");
+            $("#rulesCashDeposit").load("rules_for_cash_deposit.html");
+            $("#afterCashDeposit").load("checkout_sheet_form_after_cash_deposit.html");
+            //$("#afterCashDeposit").load("checkout_sheet_form_after_cash_deposit.html");
         });
     </script>
 </head>
@@ -27,6 +30,8 @@
                                                          value="2020-07-22" min="2020-01-01"><br>
             <div id="opening"></div>
             <div id="closing"></div>
+            <div id="rulesCashDeposit"></div>
+            <div id="afterCashDeposit"></div>
 
         </form>
     </div>
