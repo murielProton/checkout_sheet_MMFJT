@@ -20,23 +20,28 @@ function euroBillTimesQuantity(input) {
     var displayId = input.getAttribute("targetDisplay");
     document.getElementById(displayId).innerHTML = (euroBill * input.value).toFixed(2);
     openingSumm();
+    closureSumm();
 }
 
-function openingSumm() {
-    console.log("somme");
-    console.log(document.getElementById("Opening50xquantite").value);
-    var montant = document.getElementsByClassName("montant");
-    var openingSum = 0;
-    for (var i = 0; i < montant.length; i++) {
-        var contenu = montant.item(i).innerHTML;
-        console.log("item " + i);
-        console.log(contenu);
+function openingSumm () {
+    summOnSection("montantOuverture", "openingSumm");
+}
+function closureSumm() {
+    summOnSection("montantFermeture", "closureSumm");
+}
+function summOnSection(classNameMontant, idSommeMontant) {
+    var listMontant = document.getElementsByClassName(classNameMontant);
+    console.log(listMontant);
+    var sumAsFloat = 0;
+    for (let i = 0; i < listMontant.length; i++) {
+        var celluleMontant = listMontant.item(i);
+        var contenu = celluleMontant.innerHTML;
         var contenuAsFloat = parseFloat(contenu);
         if (!isNaN(contenuAsFloat)) {
-            console.log(contenuAsFloat);
-            openingSum = openingSum + contenuAsFloat;
+            sumAsFloat = sumAsFloat + contenuAsFloat;
         }
-        console.log(openingSum);
     }
-    document.getElementById("openingSumm").innerHTML =(openingSum).toFixed(2);
+    var celuleSomme = document.getElementById(idSommeMontant);
+    
+    celuleSomme.innerHTML = (sumAsFloat).toFixed(2);
 }

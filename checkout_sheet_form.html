@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,118 +10,33 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
     <script src="./checkout_sheet_back.js"></script>
     <link rel="stylesheet" href="checkout_sheet_style.css">
-</head>
 
+    <script src="jquery.js"></script>
+    <script>
+        $(function include() {
+            $("#opening").load("checkout_sheet_form_opening.html");
+            $("#closing").load("checkout_sheet_form_closing.html");
+        });
+    </script>
+</head>
 <body>
     <div>
         <h1 id="heading">Feuille de Caisse</h1>
         <form action="/action_page.php">
             <label for="dateDuJour">Date*:</label><input type="date" id="dateDuJour" name="dateDuJour"
-                value="2020-07-22" min="2020-01-01"><br>
-            <h2>Ouverture:</h2>
-            <label for="ouverturePrenom">Prénom*:</label><input type="text" id="ouverturePrenom" name="ouverturePrenom"
-                value="Jeanne-Marie"><br>
-            <label for="ouvertureNom">Nom*:</label><input type="text" id="ouvertureNom" name="ouvertureNom"
-                value="Nom de Famille"><br><br>
-            <h4>Liquidité à l'Ouverture:</h4>
-            <table style="width:100%">
-                <tr>
-                    <th></th>
-                    <th>Quantité</th>
-                    <th>montant</th>
-                </tr>
-                <tr>
-                    <td><label for="billetsCinquanteOuverture">Nombre de Billets de 50€:</label></td>
-                    <td><input type="number" id="billetsCinquanteOuverture" name="billetsCinquanteOuverture" class="inputOpen"
-                        onchange="euroBillTimesQuantity(this)" min="0" value="0" targetDisplay="Opening50xquantite"
-                            euroBill="50"></td>
-                    <td><a id="Opening50xquantite"  class="montant" ></a></td>
-                </tr>
-                <tr>
-                    <td><label for="billetsVingtOuverture">Nombre de Billets de 20€:</label></td>
-                    <td><input type="number" id="billetsVingtOuverture" name="billetsVingtOuverture" class="inputOpen"
-                        onchange="euroBillTimesQuantity(this)" min="0" value="0" targetDisplay="Opening20xquantite"
-                            euroBill="20">
-                    </td>
-                    <td> <a id="Opening20xquantite"  class="montant" ></a></td>
-                </tr>
-                <tr>
-                    <td><label for="billetsDixOuverture">Nombre de Billets de 10€:</label></td>
-                    <td> <input type="number" id="billetsDixOuverture" name="billetsDixOuverture" class="inputOpen"
-                        onchange="euroBillTimesQuantity(this)" min="0" value="0" targetDisplay="Opening10xquantite"
-                            euroBill="10">
-                    </td>
-                    <td><a id="Opening10xquantite" class="montant" ></a></td>
-                </tr>
-                <tr>
-                    <td><label for="billetsCinqOuverture">Nombre de Billets de 5€:</label></td>
-                    <td><input type="number" id="billetsCinqOuverture" name="billetsCinqOuverture" class="inputOpen"
-                        onchange="euroBillTimesQuantity(this)" min="0" value="0" targetDisplay="Opening5xquantite"
-                            euroBill="5">
-                    </td>
-                    <td><a id="Opening5xquantite"  class="montant" ></a></td>
-                </tr>
-                <tr>
-                    <td><label for="piecesDeuxOuverture">Nombre de Pièces de 2€:</label></td>
-                    <td><input type="number" id="piecesDeuxOuverture" name="piecesDeuxOuverture" class="inputOpen"
-                        onchange="euroBillTimesQuantity(this)" min="0" value="0" targetDisplay="Opening2xquantite"
-                            euroBill="2">
-                    </td>
-                    <td><a id="Opening2xquantite"  class="montant" ></a></td>
-                </tr>
-                <tr>
-                    <td><label for="piecesUnOuverture">Nombre de Pièces de 1€:</label></td>
-                    <td><input type="number" id="piecesUnOuverture" name="piecesUnOuverture" class="inputOpen"
-                        onchange="euroBillTimesQuantity(this)" min="0" value="0" targetDisplay="Opening1xquantite"
-                            euroBill="1">
-                    </td>
-                    <td><a id="Opening1xquantite"  class="montant" ></a></td>
-                </tr>
-                <tr>
-                    <td><label for="pieceCinquanteCentimesOuverture">Nombre de Pièces de 0.50€:</label></td>
-                    <td><input type="number" id="pieceCinquanteCentimesOuverture" name="pieceCinquanteCentimesOuverture"
-                        onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputOpen"
-                            targetDisplay="Opening0dote50xquantite" euroBill="0.50">
-                    </td>
-                    <td><a id="Opening0dote50xquantite"  class="montant" ></a></td>
-                </tr>
-                <tr>
-                    <td><label for="pieceVingtCentimesOuverture">Nombre de Pièces de 0.20€:</label></td>
-                    <td><input type="number" id="pieceVingtCentimesOuverture" name="pieceVingtCentimesOuverture"
-                        onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputOpen"
-                            targetDisplay="Opening0dote20xquantite" euroBill="0.20">
-                    </td>
-                    <td><a id="Opening0dote20xquantite"  class="montant" ></a></td>
-                </tr>
-                <tr>
-                    <td><label for="pieceDixCentimesOuverture">Nombre de Pièces de 0.10€:</label></td>
-                    <td><input type="number" id="pieceDixCentimesOuverture" name="pieceDixCentimesOuverture"
-                        onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputOpen"
-                            targetDisplay="Opening0dote10xquantite" euroBill="0.10">
-                    </td>
-                    <td><a id="Opening0dote10xquantite" class="montant" ></a></td>
-                </tr>
-                <tr>
-                    <td><h4>TOTAL A L'OUVERTURE (TOT A)</h4></td>
-                    <td></td>
-                    <td><h4 type="number" id="openingSumm" name="openingSumm" targetDisplay="openingSumm"
-                        onload="openingSumm(this)" min="0" value="TOTAL A"
-                        targetDisplay="openingSumm" ></h4>
-                    </h4></td>
-                </tr>
-            </table>
+                                                         value="2020-07-22" min="2020-01-01"><br>
+            <div id="opening"></div>
+            <div id="closing"></div>
 
-            <h2>Fermeture:</h2>
-            <label for="fermeturePrenom">Prénom*:</label><input type="text" id="fermeturePrenom" name="fermeturePrenom"
-                value="Jeanne-Marie"><br>
-            <label for="fermetureNom">Nom*:</label><input type="text" id="fermetureNom" name="fermetureNom"
-                value="Nom de Famille"><br><br>
         </form>
     </div>
 
     <button onclick="javascript:convertToPDF()">Générer un PDF</button>
     <script>
-        $(".inputOpen").each(function(){this.onchange()})
+        $(".inputOpen").each(function () { this.onchange() })
+    </script>
+    <script>
+        $(".inputClose").each(function () { this.onchange() })
     </script>
 </body>
 

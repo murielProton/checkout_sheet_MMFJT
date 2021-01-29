@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+    </head>
+            <div for="fermenureClosure" id="fermenureClosure" name="fermenureClosure">
+                <h2>Fermeture:</h2>
+                <label for="fermeturePrenom">Prénom*:</label><input type="text" id="fermeturePrenom" name="fermeturePrenom"
+                                                                    value="Jeanne-Marie"><br>
+                <label for="fermetureNom">Nom*:</label><input type="text" id="fermetureNom" name="fermetureNom"
+                                                              value="Nom de Famille"><br><br>
+                <div for="cashFlowAtClosure" id="cashFlowAtClosure" name="cashFlowAtClosure">
+                    <h4>Liquidité à la Fermeture:</h4>
+                    <table style="width:100%">
+                        <tr>
+                            <th></th>
+                            <th>Quantité</th>
+                            <th>montant</th>
+                        </tr>
+                        <tr>
+                            <td><label for="billetsCinquanteFermeture">Nombre de Billets de 50€:</label></td>
+                            <td>
+                                <input type="number" id="billetsCinquanteFermeture" name="billetsCinquanteFermeture" class="inputClose"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" targetDisplay="Closure50xquantite"
+                                       euroBill="50">
+                            </td>
+                            <td><a id="Closure50xquantite" class="montantFermeture"></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="billetsVingtFermeture">Nombre de Billets de 20€:</label></td>
+                            <td>
+                                <input type="number" id="billetsVingtFermeture" name="billetsVingtFermeture" class="inputClose"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" targetDisplay="Closure20xquantite"
+                                       euroBill="20">
+                            </td>
+                            <td> <a id="Closure20xquantite" class="montantFermeture"></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="billetsDixFermeture">Nombre de Billets de 10€:</label></td>
+                            <td>
+                                <input type="number" id="billetsDixFermeture" name="billetsDixOFermeture" class="inputClose"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" targetDisplay="Closure10xquantite"
+                                       euroBill="10">
+                            </td>
+                            <td><a id="Closure10xquantite" class="montantFermeture"></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="billetsCinqFermeture">Nombre de Billets de 5€:</label></td>
+                            <td>
+                                <input type="number" id="billetsCinqFermeture" name="billetsCinqFermeture" class="inputClose"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" targetDisplay="Closure5xquantite"
+                                       euroBill="5">
+                            </td>
+                            <td><a id="Closure5xquantite" class="montantFermeture"></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="piecesDeuxFermeture">Nombre de Pièces de 2€:</label></td>
+                            <td>
+                                <input type="number" id="piecesDeuxFermeture" name="piecesDeuxFermeture" class="inputClose"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" targetDisplay="Closure2xquantite"
+                                       euroBill="2">
+                            </td>
+                            <td><a id="Closure2xquantite" class="montantFermeture"></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="piecesUnFermeture">Nombre de Pièces de 1€:</label></td>
+                            <td>
+                                <input type="number" id="piecesUnFermeture" name="piecesUnFermeturee" class="inputClose"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" targetDisplay="Closure1xquantite"
+                                       euroBill="1">
+                            </td>
+                            <td><a id="Closure1xquantite" class="montantFermeture"></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="pieceCinquanteCentimesFermeture">Nombre de Pièces de 0.50€:</label></td>
+                            <td>
+                                <input type="number" id="pieceCinquanteCentimesFermeture" name="pieceCinquanteCentimesFermeture"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputClose"
+                                       targetDisplay="Closure0dote50xquantite" euroBill="0.50">
+                            </td>
+                            <td><a id="Closure0dote50xquantite" class="montantFermeture"></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="pieceVingtCentimesFermeture">Nombre de Pièces de 0.20€:</label></td>
+                            <td>
+                                <input type="number" id="pieceVingtCentimesFermeture" name="pieceVingtCentimesFermeture"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputClose"
+                                       targetDisplay="Closure0dote20xquantite" euroBill="0.20">
+                            </td>
+                            <td><a id="Closure0dote20xquantite" class="montantFermeture"></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="pieceDixCentimesFermeture">Nombre de Pièces de 0.10€:</label></td>
+                            <td>
+                                <input type="number" id="pieceDixCentimesFermeture" name="pieceDixCentimesFermeture"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputClose"
+                                       targetDisplay="Closure0dote10xquantite" euroBill="0.10">
+                            </td>
+                            <td><a id="Closure0dote10xquantite" class="montantFermeture"></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="pieceCinqCentimesFermeture">Nombre de Pièces de 0.05€:</label></td>
+                            <td>
+                                <input type="number" id="pieceCinqCentimesFermeture" name="pieceCinqCentimesFermeture"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputClose"
+                                       targetDisplay="Closure0dote05xquantite" euroBill="0.05">
+                            </td>
+                            <td><a id="Closure0dote05xquantite" class="montantFermeture"></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="pieceDeuxCentimesFermeture">Nombre de Pièces de 0.02€:</label></td>
+                            <td>
+                                <input type="number" id="pieceVingtCentimesFermeture" name="pieceDeuxCentimesFermeture"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputClose"
+                                       targetDisplay="Closure0dote02xquantite" euroBill="0.02">
+                            </td>
+                            <td><a id="Closure0dote02xquantite" class="montantFermeture"></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="pieceUnCentimeFermeture">Nombre de Pièces de 0.01€:</label></td>
+                            <td>
+                                <input type="number" id="pieceUnCentimeFermeture" name="pieceUnCentimeFermeture"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputClose"
+                                       targetDisplay="Closure0dote01xquantite" euroBill="0.01">
+                            </td>
+                            <td><a id="Closure0dote01xquantite" class="montantFermeture"></a></td>
+                        </tr>
+                        <tr>
+                            <td><h4>TOTAL B LA FERMETURE (TOT B)</h4></td>
+                            <td></td>
+                            <td>
+                                <h4 type="number" id="closureSumm" name="closureSumm" targetDisplay="closureSumm"
+                                    onload="closureSumm(this)" min="0" value="TOTAL B"
+                                    targetDisplay="closureSumm"></h4>
+                                </h4>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+</html>
