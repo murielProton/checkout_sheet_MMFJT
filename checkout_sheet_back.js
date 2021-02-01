@@ -18,6 +18,8 @@ function convertToPDF() {
 function euroBillTimesQuantity(input) {
     var euroBill = input.getAttribute("euroBill");
     var displayId = input.getAttribute("targetDisplay");
+	console.log(euroBill);
+	console.log(displayId);
     document.getElementById(displayId).innerHTML = (euroBill * input.value).toFixed(2);
     openingSumm();
     closureSumm();
