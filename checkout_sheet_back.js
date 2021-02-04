@@ -18,12 +18,12 @@ function convertToPDF() {
 function euroBillTimesQuantity(input) {
     var euroBill = input.getAttribute("euroBill");
     var displayId = input.getAttribute("targetDisplay");
-	console.log(euroBill);
-	console.log(displayId);
     document.getElementById(displayId).innerHTML = (euroBill * input.value).toFixed(2);
     openingSumm();
     closureSumm();
     afterDepositSumm();
+	memberShipSumBill();
+	memberShipSumComputer();
 }
 function summOnSection(classNameMontant, idSommeMontant) {
     var listMontant = document.getElementsByClassName(classNameMontant);
@@ -49,4 +49,15 @@ function closureSumm() {
 }
 function afterDepositSumm() {
     summOnSection("montantApresDepot", "afterDepositSumm");
+}
+function memberShipSumBill(){
+	summOnSection("montantTotalAdherentDuTicket", "membershipSumm");
+}
+function memberShipSumComputer(){
+	summOnSection("montantTotalAdherentOrdinateur", "membershipSumm");
+}
+function findValue(input){
+    var value = document.getElementById("ClosureExample").value;
+	console.log("find value",value);
+	
 }
