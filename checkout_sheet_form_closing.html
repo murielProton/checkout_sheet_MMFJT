@@ -133,21 +133,21 @@
                             <td><label for="cheque">Chèque:</label></td>
                             <td>
                                 <input type="number" id="chequeFermeture" name="chequeFermeture"
-                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputClose"
-                                       targetDisplay="ClosureCheque" euroBill="1">
+                                       onchange="euroBillTimesQuantity()" min="0" value="0" class="inputClose" >
                             </td>
-                            <td><a id="ClosureCheque" class="montantFermeture"></a></td>
+                            <td><input type="text" id="ClosureCheque" class="montantFermeture" maxlength="7" onchange="euroBillTimesQuantity()"/></td>
                         </tr>
                         <tr>
                         <tr>
                             <td><label for="carteCredit">Carte de Cédit CB:</label></td>
                             <td>
                                 <input type="number" id="carteCreditFermeture" name="carteCreditFermeture"
-                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputClose"
-                                       targetDisplay="ClosureCarteCredit" euroBill="1">
+                                       onchange="euroBillTimesQuantity()" min="0" value="0" class="inputClose" >
                             </td>
-                            <td><a id="ClosureCarteCredit" class="montantFermeture"></a></td>
+                            <td><input type="text" id="ClosureCarteCredit" class="montantFermeture" maxlength="7" onchange="euroBillTimesQuantity()"/></td>
                         </tr>
+						<!-- regex : "[+-]?([0-9]*[.])?[0-9]+"
+									 ou "[0-9]+(\.[0-9]{0,2})?" -->
                         <tr>
                             <td><h4>TOTAL B LA FERMETURE (TOT B)</h4></td>
                             <td></td>

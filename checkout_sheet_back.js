@@ -16,9 +16,15 @@ function convertToPDF() {
     doc.save('feuille_de_caisse_' + date + '.pdf');
 }
 function euroBillTimesQuantity(input) {
-    var euroBill = input.getAttribute("euroBill");
-    var displayId = input.getAttribute("targetDisplay");
-    document.getElementById(displayId).innerHTML = (euroBill * input.value).toFixed(2);
+	if(input != null){
+		
+    	var euroBill = input.getAttribute("euroBill");
+    	var displayId = input.getAttribute("targetDisplay");
+	console.log(euroBill);
+	console.log(displayId);
+	console.log(document.getElementById(displayId));
+    	document.getElementById(displayId).innerHTML = (euroBill * input.value).toFixed(2);
+	}
     openingSumm();
     closureSumm();
     afterDepositSumm();
@@ -27,11 +33,14 @@ function euroBillTimesQuantity(input) {
 }
 function summOnSection(classNameMontant, idSommeMontant) {
     var listMontant = document.getElementsByClassName(classNameMontant);
-    console.log(listMontant);
     var sumAsFloat = 0;
     for (let i = 0; i < listMontant.length; i++) {
         var celluleMontant = listMontant.item(i);
-        var contenu = celluleMontant.innerHTML;
+		var contenu = celluleMontant.innerHTML;
+		if(celluleMontant instanceof HTMLInputElement && celluleMontant.type == 'text'){
+			contenu = celluleMontant.value;
+		}
+        
         var contenuAsFloat = parseFloat(contenu);
         if (!isNaN(contenuAsFloat)) {
             sumAsFloat = sumAsFloat + contenuAsFloat;
@@ -56,8 +65,9 @@ function memberShipSumBill(){
 function memberShipSumComputer(){
 	summOnSection("montantTotalAdherentOrdinateur", "membershipSumm");
 }
-function findValue(input){
-    var value = document.getElementById("ClosureExample").value;
-	console.log("find value",value);
-	
+function findValue(){
+    var valuecheque = document.getElementById("ClosureCheque").value;
+	console.log("find value Cheque",valuecheque);
+	var valuecb = document.getElementById("ClosureCarteCredit").value;
+	console.log("find value CB",valuecb);
 }
