@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+    </head>
+	    <div for="comments" id="comments" name="comments">
+			<h4>Commentaires:</h4>
+			<div>
+				<label for="comments"></label>
+				<input type="textarea" id="comments" name="comments" rows="5" cols="100%">Indiquez toute information concernant les erreurs de caisse.</textarea>
+			</div>
+			<div>
+				<p>Fréquentation du local:</p>
+				<table id="attendanceEstimate">
+				<tr>
+					<input type="radio" id="faible" name="attendance" value="faible">
+					<label for="faible">faible</label>
+				</tr>
+				<tr>
+					<input type="radio" id="moyen" name="attendance" value="moyen">
+					<label for="moyen">moyen</label>
+				</tr>
+				<tr>
+					<input type="radio" id="plein" name="attendance" value="plein">
+					<label for="plein">plein</label>
+				</tr>
+				</table>
+			</div>
+			<div id="numberOfDeniedAccess">
+			<label for="numberOfDeniedAccess">nombre de personnes refusées:</label>
+				<input type="number" id="numberOfDeniedAccess" name="numberOfDeniedAccess"
+                  min="0" value="0" class="attendance" >
+			</div>
+			<div>
+				<p>Pendant la permanance:</p>
+				<a>J'ai eu le temps de:</a>
+				<table id="IWasAbleTo">
+					<tr>
+						<input type="checkbox" id="remplirFrigo" name="IWasAbleTo" value="remplir le frigo">
+						<label for="remplirFrigo">remplir le frigo</label>
+					</tr>
+					<tr>
+						<input type="checkbox" id="changerTorchonWC" name="IWasAbleTo" value="changer le torchon des WC">
+						<label for="changerTorchonWC">changer le torchon des WC</label>
+					</tr>
+					<tr>
+						<input type="checkbox" id="nettoyerComptoir" name="IWasAbleTo" value="nettoyer le comptoir">
+						<label for="nettoyerComptoir">nettoyer le comptoir</label>
+					</tr>
+					<tr>
+						<input type="checkbox" id="nettoyerTables" name="IWasAbleTo" value="nettoyer les tables">
+						<label for="nettoyerTables">nettoyer les tables</label>
+					</tr>
+					<tr>
+						<input type="checkbox" id="vidangerLeLaveVerre" name="IWasAbleTo" value="vidanger le lave verres">
+						<label for="vidangerLeLaveVerre">vidanger le lave verres</label>
+					</tr>
+					<tr>
+						<input type="checkbox" id="rangerLesJeux" name="IWasAbleTo" value="ranger les jeux">
+						<label for="rangerLesJeux">ranger les jeux</label>
+					</tr>					
+				</table>
+			</div>
+			<div>
+				<table>
+				<tbody>
+					<tr>
+						<h4>Pièce FC</h4>
+					</tr>
+					<tr>
+						<h4>Date*:<input type="date" id="dateDuJour" name="dateDuJour" value="2020-07-22" min="2020-01-01"><br></h4>
+					</tr>
+					<tr>
+						<h4>Signature</h4>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+	    </div>
+</html>
