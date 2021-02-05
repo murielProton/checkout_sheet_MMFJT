@@ -78,7 +78,7 @@ function diffClosingMinusOpening(){
 	var whereToDisplay = document.getElementById("recetteBmoinsA");
 	var diffBetweenBandA = closingTotalB - openingTotalA;
 	whereToDisplay.innerHTML = diffBetweenBandA;
-	return diffBetweenBandA;
+	return diffBetweenBandA.toFixed(2);
 }
 function diffTotGAndReceipt (){
 	var totalG = diffClosingMinusOpening();
@@ -86,10 +86,5 @@ function diffTotGAndReceipt (){
 	var receiptFloat =  parseFloat(receiptString);
 	var totalH = totalG - receiptFloat;
 	var whereToDisplay = document.getElementById("totH");
-	console.log("receiptString",receiptString);
-	console.log("receipt type",typeof receiptString);
-	console.log("receiptFloat",receiptFloat);
-	console.log("total H",totalH);
-	console.log("where To Display H",whereToDisplay);
-	whereToDisplay.innerHTML = totalH ;
+	whereToDisplay.innerHTML = totalH.toFixed(2) ;
 }
