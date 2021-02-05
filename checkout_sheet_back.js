@@ -17,12 +17,8 @@ function convertToPDF() {
 }
 function euroBillTimesQuantity(input) {
 	if(input != null){
-		
     	var euroBill = input.getAttribute("euroBill");
     	var displayId = input.getAttribute("targetDisplay");
-	console.log(euroBill);
-	console.log(displayId);
-	console.log(document.getElementById(displayId));
     	document.getElementById(displayId).innerHTML = (euroBill * input.value).toFixed(2);
 	}
     openingSumm();
@@ -61,7 +57,16 @@ function afterDepositSumm() {
 }
 function memberShipSumBill(){
 	summOnSection("montantTotalAdherentDuTicket", "membershipSummBill");
+	diffBetweenCompAndBill();
 }
 function memberShipSumComputer(){
 	summOnSection("montantTotalAdherentOrdinateur", "membershipSummComputer");
+	diffBetweenCompAndBill();
+}
+function diffBetweenCompAndBill(){
+	var totMemberShipSumBill = document.getElementById("membershipSummBill").innerHTML;
+	var totMemberShipSumComputer = document.getElementById("membershipSummComputer").innerHTML;
+	var whereToDisplay = document.getElementById("diffBetweenCompAndBill");
+	var diffBetweenCompAndBill = totMemberShipSumComputer - totMemberShipSumBill;
+	whereToDisplay.innerHTML = diffBetweenCompAndBill;
 }
