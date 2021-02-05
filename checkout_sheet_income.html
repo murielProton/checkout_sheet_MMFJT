@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+    </head>
+            <div for="recetteIncome" id="recetteIncome" name="recetteIncome">
+				<h2>Recette:</h2>
+				<table>
+					<tr>
+						<td><h4>Total du ticket de caisse =</h4></td>
+						<td><h4><input type="number" id="receiptTotal" name="receiptTotal"
+                        onchange="diffTotGAndReceipt()" min="0" value="0" class="inputReceipt" ></h4></td>
+					</tr>
+					<tr>
+						<td><h4>Total B - Total A (TOT G) =</h4></td>
+						<td><h4 type="number" id="recetteBmoinsA" name="recetteBmoinsA" targetDisplay="recetteBmoinsA"
+							min="0" value="recetteBmoinsA"></h4></td>
+					</tr>
+					<tr>
+						<td><h4>TOT G - Total du ticket de caisse (TOT H) =</h4></td>
+						<td><h4 type="number" id="totH" name="totH" targetDisplay="totH"
+							min="0" value="totH"></h4></td>
+					</tr>
+				</table>
+            </div>
+</html>

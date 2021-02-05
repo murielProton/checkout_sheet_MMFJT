@@ -48,9 +48,11 @@ function summOnSection(classNameMontant, idSommeMontant) {
 }
 function openingSumm () {
     summOnSection("montantOuverture", "openingSumm");
+	diffTotGAndReceipt();
 }
 function closureSumm() {
     summOnSection("montantFermeture", "closureSumm");
+	diffTotGAndReceipt();
 }
 function afterDepositSumm() {
     summOnSection("montantApresDepot", "afterDepositSumm");
@@ -69,4 +71,25 @@ function diffBetweenCompAndBill(){
 	var whereToDisplay = document.getElementById("diffBetweenCompAndBill");
 	var diffBetweenCompAndBill = totMemberShipSumComputer - totMemberShipSumBill;
 	whereToDisplay.innerHTML = diffBetweenCompAndBill;
+}
+function diffClosingMinusOpening(){
+	var openingTotalA = document.getElementById("openingSumm").innerHTML;
+	var closingTotalB = document.getElementById("closureSumm").innerHTML;
+	var whereToDisplay = document.getElementById("recetteBmoinsA");
+	var diffBetweenBandA = closingTotalB - openingTotalA;
+	whereToDisplay.innerHTML = diffBetweenBandA;
+	return diffBetweenBandA;
+}
+function diffTotGAndReceipt (){
+	var totalG = diffClosingMinusOpening();
+	var receiptString = document.getElementById("receiptTotal").value;
+	var receiptFloat =  parseFloat(receiptString);
+	var totalH = totalG - receiptFloat;
+	var whereToDisplay = document.getElementById("totH");
+	console.log("receiptString",receiptString);
+	console.log("receipt type",typeof receiptString);
+	console.log("receiptFloat",receiptFloat);
+	console.log("total H",totalH);
+	console.log("where To Display H",whereToDisplay);
+	whereToDisplay.innerHTML = totalH ;
 }
