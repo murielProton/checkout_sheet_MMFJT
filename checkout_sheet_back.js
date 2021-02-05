@@ -60,14 +60,8 @@ function afterDepositSumm() {
     summOnSection("montantApresDepot", "afterDepositSumm");
 }
 function memberShipSumBill(){
-	summOnSection("montantTotalAdherentDuTicket", "membershipSumm");
+	summOnSection("montantTotalAdherentDuTicket", "membershipSummBill");
 }
 function memberShipSumComputer(){
-	summOnSection("montantTotalAdherentOrdinateur", "membershipSumm");
-}
-function findValue(){
-    var valuecheque = document.getElementById("ClosureCheque").value;
-	console.log("find value Cheque",valuecheque);
-	var valuecb = document.getElementById("ClosureCarteCredit").value;
-	console.log("find value CB",valuecb);
+	summOnSection("montantTotalAdherentOrdinateur", "membershipSummComputer");
 }

@@ -7,7 +7,7 @@
     <meta http-equiv="Expires" content="0" />
 </head>
 <div for="fermetureAfterDeposit" id="fermetureAfterDeposit" name="fermetureAfterDeposit">
-    <h2>La caisse après le dépôt:</h2>
+    <h2>Adhésions:</h2>
 
     <h4></h4>
     <table style="width:100%">
@@ -114,13 +114,20 @@
 				<a id="totalAmountOfLeasingMembershipOnComputer" class="montantTotalAdherentOrdinateur"></a>
 			</td>
 		<tr>
-                <td><h4>TOTAL D des adhésions (TOT D)</h4></td>
-                <td></td>
+                <td><h4>TOTAL D des adhésions (TOT D=F-E)</h4></td>
+                <td><h4 type="number" id="diffBetweenCompAndBill" name="diffBetweenCompAndBill" targetDisplay="diffBetweenCompAndBill"
+						onload="" min"0" value="TOTAL D"></h4></td>
+				<td></td>
+				<td></td>
                 <td>
-                    <h4 type="number" id="membershipSumm" name="membershipSumm" targetDisplay="membershipSumm"
-                        onload="memberShipSum(this)" min="0" value="TOTAL D"
-                        targetDisplay="membershipSumm"></h4>
-                    </h4>
+                    <a type="number" id="membershipSummBill" name="membershipSummBill" targetDisplay="membershipSummBill"
+                        min="0" value="TOTAL E">
+                    </a>
+                </td>
+                <td>
+                    <a type="number" id="membershipSummComputer" name="membershipSummComputer" targetDisplay="membershipSummComputer"
+                        min="0" value="TOTAL F">
+                    </a>
                 </td>
          </tr>
         </tr>
