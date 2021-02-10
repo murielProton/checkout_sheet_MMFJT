@@ -24,9 +24,13 @@ function euroBillTimesQuantity(input) {
     openingSumm();
     closureSumm();
     afterDepositSumm();
+	cashierMarkSumm();
 	memberShipSumBill();
 	memberShipSumComputer();
+	diffBetweenCompAndBill();
+	diffTotGAndReceipt();
 }
+// function (l'endroit où apparaît la somme, les montants à additionné)
 function summOnSection(classNameMontant, idSommeMontant) {
     var listMontant = document.getElementsByClassName(classNameMontant);
     var sumAsFloat = 0;
@@ -46,24 +50,26 @@ function summOnSection(classNameMontant, idSommeMontant) {
 
     celuleSomme.innerHTML = (sumAsFloat).toFixed(2);
 }
+
 function openingSumm () {
     summOnSection("montantOuverture", "openingSumm");
-	diffTotGAndReceipt();
 }
 function closureSumm() {
     summOnSection("montantFermeture", "closureSumm");
-	diffTotGAndReceipt();
 }
 function afterDepositSumm() {
     summOnSection("montantApresDepot", "afterDepositSumm");
 }
+function cashierMarkSumm() {
+    summOnSection("montantTicket", "cashierMarkSumm");
+	putCashierMarkSummIntoIdReceiptTotal();
+	
+}
 function memberShipSumBill(){
 	summOnSection("montantTotalAdherentDuTicket", "membershipSummBill");
-	diffBetweenCompAndBill();
 }
 function memberShipSumComputer(){
 	summOnSection("montantTotalAdherentOrdinateur", "membershipSummComputer");
-	diffBetweenCompAndBill();
 }
 function diffBetweenCompAndBill(){
 	var totMemberShipSumBill = document.getElementById("membershipSummBill").innerHTML;
@@ -71,6 +77,9 @@ function diffBetweenCompAndBill(){
 	var whereToDisplay = document.getElementById("diffBetweenCompAndBill");
 	var diffBetweenCompAndBill = totMemberShipSumComputer - totMemberShipSumBill;
 	whereToDisplay.innerHTML = diffBetweenCompAndBill;
+}
+function putCashierMarkSummIntoIdReceiptTotal(){
+document.getElementById("receiptTotal").value = document.getElementById("cashierMarkSumm").innerHTML;
 }
 function diffClosingMinusOpening(){
 	var openingTotalA = document.getElementById("openingSumm").innerHTML;
@@ -88,3 +97,4 @@ function diffTotGAndReceipt (){
 	var whereToDisplay = document.getElementById("totH");
 	whereToDisplay.innerHTML = totalH.toFixed(2) ;
 }
+
