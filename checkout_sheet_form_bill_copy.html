@@ -1,0 +1,264 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+    </head>
+            <div for="bill" id="bill" name="bill">
+                <h2>Ticket:</h2>
+				<p>Recopiez le ticket:</p>
+				<table>
+                         <tr>
+                            <th></th>
+                            <th>Quantité</th>
+                            <th>Montant</th>
+                        </tr>
+<tbody>
+                        <tr>
+                            <td><label for="demi">demi</label></td>
+                            <td>
+                                <input type="number" id="demi" name="demi" class="inputBillCopy"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" targetDisplay="demiTicketXeuros"
+                                       euroBill="3">
+                            </td>
+							<td>
+							<a>3 €</a>
+							</td>
+                            <td><a id="demiTicketXeuros" class="montantTicket"></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="demiSirop">demi sirop</label></td>
+                            <td>
+                                <input type="number" id="demiSirop" name="demiSirop" class="inputBillCopy"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" targetDisplay="demiSiropTicketXeuros"
+                                       euroBill="3.50">
+                            </td>
+							<td>
+							<a>3,5 €</a>
+							</td>
+                            <td> <a id="demiSiropTicketXeuros" class="montantTicket"></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="pichet">pichet</label></td>
+                            <td>
+                                <input type="number" id="pichet" name="pichet" class="inputBillCopy"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" targetDisplay="pichetXeuros"
+                                       euroBill="10">
+                            </td>
+							<td>
+							<a>10 €</a>
+							</td>
+                            <td><a id="pichetXeuros" class="montantTicket"></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="pichetSirop">pichet sirop</label></td>
+                            <td>
+                                <input type="number" id="pichetSirop" name="pichetSirop" class="inputBillCopy"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" targetDisplay="pichetSiropXeuros"
+                                       euroBill="11.50">
+                            </td>
+							<td>
+							<a>11,5 €</a>
+							</td>
+                            <td><a id="pichetSiropXeuros" class="montantTicket"></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="biereBouteille">bouteille de bière</label></td>
+                            <td>
+                                <input type="number" id="biereBouteille" name="biereBouteille" class="inputBillCopye"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" targetDisplay="biereBouteilleXeuros"
+                                       euroBill="3.50">
+                            </td>
+							<td>
+							<a>3,5 €</a>
+							</td>
+                            <td><a id="biereBouteilleXeuros" class="montantTicket"></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="cidreTrenteTroisCl">cidre 33cl</label></td>
+                            <td>
+                                <input type="number" id="cidreTrenteTroisCl" name="cidreTrenteTroisCl" class="inputBillCopy"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" targetDisplay="cidreTrenteTroisClXeuros"
+                                       euroBill="3.50">
+                            </td>
+							<td>
+							<a>3,5 €</a>
+							</td>
+                            <td><a id="cidreTrenteTroisClXeuros" class="montantTicket"></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="cidreSoixanteQuinzeCl">cidre 75cl</label></td>
+                            <td>
+                                <input type="number" id="cidreSoixanteQuinzeCl" name="cidreSoixanteQuinzeCl"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputBillCopy"
+                                       targetDisplay="cidreSoixanteQuinzeClXeuros" euroBill="7.50">
+                            </td>
+							<td>
+							<a>7,5 €</a>
+							</td>
+                            <td><a id="cidreSoixanteQuinzeClXeuros" class="montantTicket"></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="jusVingtCl">jus de fruit 20cl</label></td>
+                            <td>
+                                <input type="number" id="jusVingtCl" name="jusVingtCl"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputBillCopy"
+                                       targetDisplay="jusVingtClXeuros" euroBill="2">
+                            </td>
+							<td>
+							<a>2 €</a>
+							</td>
+                            <td><a id="jusVingtClXeuros" class="montantTicket"></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="jusUnL">jus 1L</label></td>
+                            <td>
+                                <input type="number" id="jusUnL" name="jusUnL"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputBillCopy"
+                                       targetDisplay="jusUnLXeuros" euroBill="8">
+                            </td>
+							<td>
+							<a>8 €</a>
+							</td>
+                            <td><a id="jusUnLXeuros" class="montantTicket"></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="limonade">limonade</label></td>
+                            <td>
+                                <input type="number" id="limonade" name="limonade"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputBillCopy"
+                                       targetDisplay="limonadeXeuros" euroBill="2">
+                            </td>
+							<td>
+							<a>2 €</a>
+							</td>
+                            <td><a id="limonadeXeuros" class="montantTicket"></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="diabolo">diabolo</label></td>
+                            <td>
+                                <input type="number" id="diabolo" name="diabolo"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputBillCopy"
+                                       targetDisplay="diaboloXeuros" euroBill="2.50">
+                            </td>
+							<td>
+							<a>2,50 €</a>
+							</td>
+                            <td><a id="diaboloXeuros" class="montantTicket"></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="cacolac">cacolac</label></td>
+                            <td>
+                                <input type="number" id="cacolac" name="cacolac"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputBillCopy"
+                                       targetDisplay="cacolacXeuros" euroBill="2">
+                            </td>
+							<td>
+							<a>2 €</a>
+							</td>
+                            <td><a id="cacolacXeuros" class="montantTicket"></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="canette">canette</label></td>
+                            <td>
+                                <input type="number" id="canette" name="canette"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputBillCopy"
+                                       targetDisplay="canetteXeuros" euroBill="2.50">
+                            </td>
+							<td>
+							<a>2,50 €</a>
+							</td>
+                            <td><a id="canetteXeuros" class="montantTicket"></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="sirop">sirop</label></td>
+                            <td>
+                                <input type="number" id="sirop" name="sirop"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputBillCopy"
+                                       targetDisplay="siropXeuros" euroBill="1">
+                            </td>
+							<td>
+							<a>1 €</a>
+							</td>
+                            <td><a id="siropXeuros" class="montantTicket"></a></td>
+                        </tr>
+						<tr>
+                            <td><label for="siropUnL">sirop 1L</label></td>
+                            <td>
+                                <input type="number" id="siropUnL" name="siropUnL"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputBillCopy"
+                                       targetDisplay="siropUnLXeuros" euroBill="2">
+                            </td>
+							<td>
+							<a>2 €</a>
+							</td>
+                            <td><a id="siropUnLXeuros" class="montantTicket"></a></td>
+                        </tr>
+						<tr>
+                            <td><label for="boissonChaude">boisson chaude</label></td>
+                            <td>
+                                <input type="number" id="boissonChaude" name="boissonChaude"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputBillCopy"
+                                       targetDisplay="boissonChaudeXeuros" euroBill="1">
+                            </td>
+							<td>
+							<a>1 €</a>
+							</td>
+                            <td><a id="boissonChaudeXeuros" class="montantTicket"></a></td>
+                        </tr>
+						<tr>
+                            <td><label for="biscuit">biscuit</label></td>
+                            <td>
+                                <input type="number" id="biscuit" name="biscuit"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputBillCopy"
+                                       targetDisplay="biscuitXeuros" euroBill="1.50">
+                            </td>
+							<td>
+							<a>1,5 €</a>
+							</td>
+                            <td><a id="biscuitXeuros" class="montantTicket"></a></td>
+                        </tr>
+						<tr>
+                            <td><label for="biscuitsXtrois">biscuits X3</label></td>
+                            <td>
+                                <input type="number" id="biscuitsXtrois" name="biscuitsXtrois"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputBillCopy"
+                                       targetDisplay="biscuitsXtroisXeuros" euroBill="4">
+                            </td>
+							<td>
+							<a>4 €</a>
+							</td>
+                            <td><a id="biscuitsXtroisXeuros" class="montantTicket"></a></td>
+                        </tr>
+						<tr>
+                            <td><label for="mANDmS">m&m's</label></td>
+                            <td>
+                                <input type="number" id="mANDmS" name="mANDmS"
+                                       onchange="euroBillTimesQuantity(this)" min="0" value="0" class="inputBillCopy"
+                                       targetDisplay="mANDmSXeuros" euroBill="4">
+                            </td>
+							<td>
+							<a>4 €</a>
+							</td>
+                            <td><a id="mANDmSXeuros" class="montantTicket"></a></td>
+                        </tr>
+						<tr>
+                            <td><h4>TOTAL DES VENTES DU TICKET DE CAISSE (TOT I)</h4></td>
+                            <td></td>
+                            <td>
+                                <h4 type="number" id="cashierMarkSumm" name="montantTicket" 
+                                    onload="cashierMarkSumm(this)" min="0" value="TOTAL I"
+                                    targetDisplay="cashierMarkSumm">
+                                </h4>
+                            </td>
+                        </tr>
+</tbody>
+                    </table>
+                </div>
+            </div>
+
+
+
+</html>
