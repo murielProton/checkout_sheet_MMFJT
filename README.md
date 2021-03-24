@@ -7,18 +7,18 @@ To make this repo work :
 
 
 Technologies :
-Languages
+Languages :
 This tool was made for a french organasation, there for I chose UFT-32 in order to compile é, € and so on.
 
 Display and Cache :
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> this been added so it would ease the developpement session of it all. As my cash keep interfearing with the display in Firefox.
 
-The Files and there roles
-Front
+The Files and there roles :
+Front :
 In order not to have too many lines in one file, I've devided my work in several files depending on the subject of the check out. I've displayed all of theese forms in one file to be opened in your browser. 
 checkout_sheet_form.html  -> this file regroupes all of the other file to display them as a group, and to be filled by the volunteer on line.
 
-Here is a list alphabeticaly ordered of all the files and their roles.
+Here is a list alphabeticaly ordered of all the files and their roles :
 checkout_sheet_comments.html -> form for the volunteer to comment on his or her shift. 
 checkout_sheet_form_after_cash_deposit.html  -> form for the volunteer to input the cash still in the register after the déposit for the bank.
 checkout_sheet_form_bill_copy.html  -> form for the volunteer to copy the receipt of the cash register in.
